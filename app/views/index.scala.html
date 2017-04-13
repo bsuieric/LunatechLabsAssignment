@@ -1,0 +1,12 @@
+
+@main("Welcome to Play") {
+<center>
+    <h1>Choose from Query or Reports</h1>
+         <form action="@routes.QueryController.GetCountryByNameOrCode()">
+          <input type="submit" value="Query" style="height:100px; width:100px">
+         </form>
+         <form action="@routes.ReportController.GetReport()">
+          <input type="submit" value="Reports" style="height:100px; width:100px">
+         </form>
+</center>
+}

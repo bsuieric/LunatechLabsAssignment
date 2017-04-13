@@ -1,0 +1,41 @@
+@(topTenHighest : List[Array[Object]], topTenLowest : List[Array[Object]], typeOfRunways : List[Array[Object]], mostCommonRunways : List[Array[Object]])
+
+<h1>REPORT</h1>
+
+<h2>The 10 country with the highest number of airports</h2>
+<ul>
+    @for(withHighest <- topTenHighest) {
+    <li>@withHighest(0) with  @withHighest(1) airports</li>
+    }
+</ul>
+
+<h2>The 10 country with the lowest number of airports</h2>
+<ul>
+    @for(withLowest <- topTenLowest) {
+    <li>@withLowest(0) with  @withLowest(1) airports</li>
+    }
+</ul>
+
+<h2>10 most common runway identifications</h2>
+<ul>
+    @for(runway <- mostCommonRunways) {
+    <li>@runway(0)</li>
+    }
+</ul>
+
+<h2>Type of runways per country</h2>
+    <table>
+        <tr>
+            <th>Country</th>
+            <th>Runway Identfication</th>
+        </tr>
+
+      @for(runwayType <- typeOfRunways){
+
+        <tr>
+            <td>@runwayType(1)</td>
+            <td>@runwayType(0)</td>
+        </tr>
+    }
+    </table>
+

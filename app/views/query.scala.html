@@ -1,0 +1,23 @@
+@(countries: List[Country])
+
+<center>
+    <h1>Query</h1>
+    <form action="@routes.QueryController.GetCountryByNameOrCode()">
+        <input type="text" name="input" />
+        <input type="submit" value="GO">
+    </form>
+</center>
+
+@for(country <- countries){
+<h2>@country.getName()</h2>
+<ul> @for(airport <- country.getAirports()) {
+    <li>
+        @airport.getName()
+        <ul> @for(runway <- airport.getRunways()) {
+            <li>@runway.getId()</li>
+            <li>@runway.getSurface()</li>
+            } </ul>
+    </li>
+    } </ul>
+}
+

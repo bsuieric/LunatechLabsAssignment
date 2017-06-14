@@ -12,6 +12,7 @@ import java.util.List;
 @Entity
 public class Airport {
 
+    
     @Id
     private Long id;
     private String ident;
